@@ -12,13 +12,15 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './shared/api.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GamesListComponent } from './components/games-list/games-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddPlayerComponent,
     EditPlayerComponent,
-    PlayerListComponent
+    PlayerListComponent,
+    GamesListComponent
     
   ],
   imports: [

@@ -30,9 +30,24 @@ export class ApiService {
     return this.http.get(`${this.endpoint}`);
   }
 
+  //get all games
+  GetGames() {
+    return this.http.get(`${this.endpoint}`);
+  }
+
   // Get player
   GetPlayer(id): Observable<any> {
     let API_URL = `${this.endpoint}/read-player/${id}`;
+    return this.http.get(API_URL, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {}
+      }),
+      catchError(this.errorMgmt)
+    )
+  }
+  // Get game
+  GetGame(id): Observable<any> {
+    let API_URL = `${this.endpoint}/read-game/${id}`;
     return this.http.get(API_URL, { headers: this.headers }).pipe(
       map((res: Response) => {
         return res || {}

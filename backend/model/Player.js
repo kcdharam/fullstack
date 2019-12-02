@@ -12,7 +12,7 @@ const Schema = mongoose.Schema;
 
 // });
 let Player = new Schema({
-    player_name: {
+    player_title: {
       type: String
     },
     rank: {
