@@ -23,7 +23,7 @@
               <!-- Email -->
               <mat-form-field>
                     <mat-label>Rank</mat-label>
-                    <mat-select [(value)]="selected" formControlName="rank">
+                    <mat-select [(value)]="selectedRank" formControlName="rank">
                       <mat-option [value]="rankArray" *ngFor="let rankArray of RankArray">{{rankArray}}
                       </mat-option>
                     </mat-select>
@@ -56,7 +56,7 @@
                 
                 <mat-form-field>
                     <mat-label>Favorite Game</mat-label>
-                    <mat-select [(value)]="selected" formControlName="gamesPlayed">
+                    <mat-select [(value)]="selectedGames" formControlName="gamesPlayed">
                         <mat-option [value]="gamesArray" *ngFor="let gamesArray of GamesArray">{{gamesArray}}
                         </mat-option>
                     </mat-select>
@@ -73,7 +73,7 @@
                                   </mat-radio-group> -->
                 <mat-form-field>
                     <mat-label>Status</mat-label>
-                        <mat-select [(value)]="selected" formControlName="status">
+                        <mat-select [(value)]="selectedStatus" formControlName="status">
                             <mat-option [value]="statusArray" *ngFor="let statusArray of StatusArray">{{statusArray}}
                             </mat-option>
                         </mat-select>
