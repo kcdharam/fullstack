@@ -33,5 +33,7 @@ let Player = new Schema({
   }, {
     collection: 'players'
   })
+
+  
   
   module.exports = mongoose.model('Player', Player)

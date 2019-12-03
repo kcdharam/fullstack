@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Player } from './player';
+import { Game } from './game';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
@@ -32,7 +33,7 @@ export class ApiService {
 
   //get all games
   GetGames() {
-    return this.http.get(`${this.endpoint}`);
+    return this.http.get(`${this.endpoint}/games-list`);
   }
 
   // Get player
