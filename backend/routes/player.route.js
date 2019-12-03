@@ -5,6 +5,7 @@ const playerRoute = express.Router();
 // Player model
 let Player = require('../model/Player');
 
+
 // Add Player
 playerRoute.route('/add-player').post((req, res, next) => {
   Player.create(req.body, (error, data) => {
