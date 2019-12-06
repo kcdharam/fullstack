@@ -5,11 +5,13 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Player } from 'src/app/shared/player';
 
 @Component({
-  selector: 'app-player-list',
-  templateUrl: './player-list.component.html',
-  styleUrls: ['./player-list.component.css']
+  selector: 'app-player-rankings',
+  templateUrl: './player-rankings.component.html',
+  styleUrls: ['./player-rankings.component.css']
 })
-export class PlayerListComponent implements OnInit {
+export class PlayerRankingsComponent implements OnInit {
+  
+  enableJoin: boolean = false;
 
   PlayerData: any = [];
   dataSource: MatTableDataSource<Player>;
@@ -23,18 +25,21 @@ export class PlayerListComponent implements OnInit {
       setTimeout(() => {
         this.dataSource.paginator = this.paginator;
       }, 0);
-    })    
+    }) 
+       
   }
+
+ 
+
+  // joinPlayer(){
+  //   if() {
+  //     const data = this.dataSource.data;
+  //     data.splice((this.paginator.pageIndex * this.paginator.pageSize) + index, 1);
+  //     this.dataSource.data = data;
+  //     this.playerApi.DeletePlayer(e._id).subscribe()
+  //   }
+  // }
 
   ngOnInit() { }
-
-  deletePlayer(index: number, e){
-    if(window.confirm('Are you sure')) {
-      const data = this.dataSource.data;
-      data.splice((this.paginator.pageIndex * this.paginator.pageSize) + index, 1);
-      this.dataSource.data = data;
-      this.playerApi.DeletePlayer(e._id).subscribe()
-    }
-  }
 
 }

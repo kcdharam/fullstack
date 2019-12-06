@@ -38,15 +38,15 @@ export class EditPlayerComponent implements OnInit {
   ) { 
     var id = this.actRoute.snapshot.paramMap.get('id');
     this.playerApi.GetPlayer(id).subscribe(data => {
-      console.log(data.subjects)
+      //console.log(data.subjects)
       //this.subjectArray = data.subjects;
       this.playerForm = this.fb.group({
-      player_name: ['', [Validators.required]],
-      rank: ['', [Validators.required]],
-      score: ['', [Validators.required]],
-      time: ['', [Validators.required]],
-      gamesPlayed: ['', [Validators.required]],
-      status: ['', [Validators.required]]
+      player_name: [data.player_name, [Validators.required]],
+      rank: [data.rank, [Validators.required]],
+      score: [data.score, [Validators.required]],
+      time: [data.time, [Validators.required]],
+      gamesPlayed: [data.gamesPlayed, [Validators.required]],
+      status: [data.status, [Validators.required]]
       })      
     })    
   }

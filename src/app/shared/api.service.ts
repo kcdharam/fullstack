@@ -26,6 +26,7 @@ export class ApiService {
       )
   }
 
+  
   // Get all player
   GetPlayers() {
     return this.http.get(`${this.endpoint}`);
@@ -64,6 +65,10 @@ export class ApiService {
       catchError(this.errorMgmt)
     )
   }
+
+  
+
+
 
   // Delete Player
  
