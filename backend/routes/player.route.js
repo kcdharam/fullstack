@@ -55,6 +55,9 @@ playerRoute.route('/update-player/:id').put((req, res, next) => {
   })
 })
 
+
+
+
 // Delete player
 playerRoute.route('/delete-player/:id').delete((req, res, next) => {
     Player.findByIdAndRemove(req.params.id, (error, data) => {

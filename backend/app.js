@@ -30,6 +30,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '~/GamerLobby')));
 app.use('/', express.static(path.join(__dirname, '~/GamerLobby')));
 app.use('/api', playerRoute)
+//app.use('/api/player-rankings', playerRoute)
 app.use('/api/games-list', gameRoute)
 
 // Create port

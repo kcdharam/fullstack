@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './shared/api.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GamesListComponent } from './components/games-list/games-list.component';
+import { PlayerRankingsComponent } from './components/player-rankings/player-rankings.component';
+import { JoinGameComponent } from './components/join-game/join-game.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { GamesListComponent } from './components/games-list/games-list.component
     AddPlayerComponent,
     EditPlayerComponent,
     PlayerListComponent,
-    GamesListComponent
+    GamesListComponent,
+    PlayerRankingsComponent,
+    JoinGameComponent
     
   ],
   imports: [

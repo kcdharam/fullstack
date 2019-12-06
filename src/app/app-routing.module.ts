@@ -5,12 +5,17 @@ import { AddPlayerComponent } from './components/add-player/add-player.component
 import { EditPlayerComponent } from './components/edit-player/edit-player.component';
 import { PlayerListComponent } from './components/player-list/player-list.component';
 import { GamesListComponent } from './components/games-list/games-list.component';
+import { PlayerRankingsComponent } from './components/player-rankings/player-rankings.component';
+import { JoinGameComponent } from './components/join-game/join-game.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'add-player' },
   { path: 'add-player', component: AddPlayerComponent },
   { path: 'edit-player/:id', component: EditPlayerComponent },
   { path: 'player-list', component: PlayerListComponent },
-  { path: 'games-list', component: GamesListComponent }
+  { path: 'games-list', component: GamesListComponent },
+  { path: 'player-rankings', component: PlayerRankingsComponent },
+  { path: 'join-game', component: JoinGameComponent }
+
 ];
 
 
