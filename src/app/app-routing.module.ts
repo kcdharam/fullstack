@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'player-list', component: PlayerListComponent },
   { path: 'games-list', component: GamesListComponent },
   { path: 'player-rankings', component: PlayerRankingsComponent },
-  { path: 'join-game', component: JoinGameComponent }
+  { path: 'join-game/:id', component: JoinGameComponent }
 
 ];
 

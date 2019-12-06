@@ -66,6 +66,12 @@ export class ApiService {
     )
   }
 
+  // JoinPlayer(id, data: Player["status"]): Observable<any> {
+  //   let API_URL = `${this.endpoint}/join-player/${id}`;
+  //   return this.http.put(API_URL, data, { headers: this.headers }).pipe(
+  //     catchError(this.errorMgmt)
+  //   )
+  // }
   
 
 
