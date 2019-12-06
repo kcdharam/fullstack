@@ -8,7 +8,7 @@ import { GamesListComponent } from './components/games-list/games-list.component
 import { PlayerRankingsComponent } from './components/player-rankings/player-rankings.component';
 import { JoinGameComponent } from './components/join-game/join-game.component';
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'add-player' },
+  { path: '', pathMatch: 'full', redirectTo: 'player-rankings' },
   { path: 'add-player', component: AddPlayerComponent },
   { path: 'edit-player/:id', component: EditPlayerComponent },
   { path: 'player-list', component: PlayerListComponent },
