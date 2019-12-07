@@ -5,6 +5,7 @@ let express = require('express'),
   cors = require('cors'),
   bodyParser = require('body-parser'),
   dataBaseConfig = require('./database/db');
+  expressValidator = require('express-validator');
 
 // Connecting mongoDB
 mongoose.Promise = global.Promise;
@@ -21,6 +22,7 @@ mongoose.connect(dataBaseConfig.db, {
 // Set up express js port
 const playerRoute = require('../backend/routes/player.route')
 const gameRoute = require('../backend/routes/game.route')
+const router = require('../backend/routes/auth.routes')
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -29,8 +31,9 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 app.use(express.static(path.join(__dirname, '~/GamerLobby')));
 app.use('/', express.static(path.join(__dirname, '~/GamerLobby')));
-app.use('/api', playerRoute)
-//app.use('/api/player-rankings', playerRoute)
+app.use('/api', router)
+// app.use('/api/player-list', playerRoute)
+app.use('/api/players', playerRoute)
 app.use('/api/games-list', gameRoute)
 
 // Create port
