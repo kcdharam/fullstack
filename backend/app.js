@@ -34,7 +34,7 @@ app.use('/', express.static(path.join(__dirname, '~/GamerLobby')));
 app.use('/api', router)
 // app.use('/api/player-list', playerRoute)
 app.use('/api/players', playerRoute)
-app.use('/api/games-list', gameRoute)
+app.use('/api/games', gameRoute)
 
 // Create port
 const port = process.env.PORT || 4000;

@@ -1,9 +1,39 @@
 <!-- Title group  -->
-<div class="title-group">
+<!-- <div class="title-group">
   
     <h1 class="mat-h1">Players List</h1>
     <mat-divider fxFlex="1 0"></mat-divider>
-  </div>
+  </div> -->
+  <div class="container">
+  <nav style="margin-left:10em">
+    <a id="toggle-pos" routerLink="/player-list">Players</a>
+    <a routerLink="/games-list">Games</a>
+</nav>
+</div>
+<div class="title-group">
+  <mat-toolbar-row>
+      <!-- <form [formGroup]="searchForm" >  -->
+      <form>
+        <span id='searchBar'>
+          <mat-icon class="search-icon" aria-hidden="false" aria-label="Search">search</mat-icon>
+          <input matInput placeholder="search">
+        </span>
+      </form>
+      <span class="example-spacer"></span>
+    </mat-toolbar-row>
+</div>
+
+<!-- <div ng-controller="AppCtrl" ng-cloak>
+  <md-content class="md-padding">
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+      <md-nav-item routerLink="/player-list" >Players List</md-nav-item>
+      <md-nav-item routerLink="/games-list" >Games List</md-nav-item>
+      these require actual routing with ui-router or ng-route, so they won't work in the demo
+      <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
+      <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
+      
+    </md-nav-bar>
+  </md-content> -->
   
   <!-- <p *ngIf="PlayerData.length <= 0" class="no-data">There is no player added yet!</p> 
   *ngIf="playerData.length > 0-->

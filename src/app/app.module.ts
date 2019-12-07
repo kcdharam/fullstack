@@ -22,8 +22,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/authconfig.interceptor';
-//dharam
-import { LoginComponent } from './components/login/login.component';
+
 
 
 @NgModule({
@@ -38,11 +37,7 @@ import { LoginComponent } from './components/login/login.component';
 
     SigninComponent,
     SignupComponent,
-    UserProfileComponent,
-//dharam
-    LoginComponent
-
-    
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

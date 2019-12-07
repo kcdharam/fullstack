@@ -3,6 +3,7 @@ import { ApiService } from './../../shared/api.service';
 import { ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Player } from 'src/app/shared/player';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-player-list',
@@ -16,7 +17,7 @@ export class PlayerListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true} ) paginator: MatPaginator;
   displayedColumns: string[] = ['_id', 'player_name', 'rank', 'score', 'time', 'gamesPlayed', 'status', 'action'];
 
-  constructor(private playerApi: ApiService) {
+  constructor(public playerApi: ApiService, private actRoute: ActivatedRoute) {
     this.playerApi.GetPlayers().subscribe(data => {
       this.PlayerData = data;
       this.dataSource = new MatTableDataSource<Player>(this.PlayerData);
