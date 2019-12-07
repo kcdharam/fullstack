@@ -14,15 +14,18 @@
 </mat-toolbar>
 <div class="title-group">
   <mat-toolbar-row>
+
       <!-- <form [formGroup]="searchForm" >  -->
-      <form>
+      <form style="width : 70%">
         <span id='searchBar'>
           <mat-icon class="search-icon" aria-hidden="false" aria-label="Search">search</mat-icon>
           <input matInput placeholder="search">
         </span>
       </form>
       <span class="example-spacer"></span>
+      <button mat-button mat-align="end" style="width : 20%" routerLink="/add-player">Add a new player</button>
     </mat-toolbar-row>
+
 </div>
 
 <!-- <div ng-controller="AppCtrl" ng-cloak>
