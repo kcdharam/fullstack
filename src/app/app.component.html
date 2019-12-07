@@ -5,7 +5,7 @@
 
 <mat-card>
   <div id="button">
-  <button mat-flat-button color="primary" [routerLink]="['/login']" >Login</button>
+  <button mat-flat-button color="primary" [routerLink]="['/log-in']" >Login</button>
   </div>
 </mat-card>
 
@@ -45,7 +45,7 @@
         <mat-icon>format_list_bulleted</mat-icon> signup
       </a>
 
-      <!-- <a mat-list-item *ngIf="this.authService.isLoggedIn" >User Profile</a> -->
+    <a mat-list-item *ngIf="this.authService.isLoggedIn" >User Profile</a> -->
     <!-- <a mat-list-item *ngIf="!this.authService.isLoggedIn" routerLinkActive="active" routerLink="/log-in">
       <mat-icon>format_list_bulleted</mat-icon> Sign
       in</a>
@@ -55,7 +55,7 @@
 
   <!-- <button (click)="logout()" *ngIf="this.authService.isLoggedIn" type="button" class="btn btn-danger">Logout</button> -->
 
-    </mat-nav-list>
+    <!-- </mat-nav-list>
   </mat-sidenav> -->
 
   <!-- Main content -->

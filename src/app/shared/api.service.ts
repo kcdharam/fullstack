@@ -40,7 +40,8 @@ export class ApiService {
         localStorage.setItem('access_token', res.token)
         this.getUserProfile(res._id).subscribe((res) => {
           this.currentUser = res;
-          this.router.navigate(['user-profile/' + res.msg._id]);
+          //this.router.navigate(['player-list/' + res.msg._id]);
+          this.router.navigate(['player-list/']);
         })
       })
   }
@@ -84,12 +85,12 @@ export class ApiService {
   
   // Get all player
   GetPlayers() {
-    return this.http.get(`${this.endpoint}`);
+    return this.http.get(`${this.endpoint}/players/`);
   }
 
   //get all games
   GetGames() {
-    return this.http.get(`${this.endpoint}/games-list`);
+    return this.http.get(`${this.endpoint}/games/`);
   }
 
   // Get player
@@ -104,7 +105,7 @@ export class ApiService {
   }
   // Get game
   GetGame(id): Observable<any> {
-    let API_URL = `${this.endpoint}/players/read-game/${id}`;
+    let API_URL = `${this.endpoint}/games/read-game/${id}`;
     return this.http.get(API_URL, { headers: this.headers }).pipe(
       map((res: Response) => {
         return res || {}
@@ -134,7 +135,7 @@ export class ApiService {
   // Delete Player
  
   DeletePlayer(id): Observable<any> {
-    var API_URL = `${this.endpoint}/delete-player/${id}`;
+    var API_URL = `${this.endpoint}/players/delete-player/${id}`;
     return this.http.delete(API_URL).pipe(
       catchError(this.errorMgmt)
     )

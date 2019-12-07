@@ -5,6 +5,8 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material';
 import { ApiService } from './../../shared/api.service';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+
+import { ActivatedRoute } from '@angular/router';
 //import { Player } from './../../shared/player.ts';
 
 // export interface GamesPlayed {
@@ -40,7 +42,8 @@ export class AddPlayerComponent implements OnInit {
     public fb: FormBuilder,
     private router: Router,
     private ngZone: NgZone,
-    private playerApi: ApiService
+    private playerApi: ApiService,
+    private actRoute: ActivatedRoute
   ) { }
 
   /* Reactive book form */

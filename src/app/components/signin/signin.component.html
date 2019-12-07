@@ -1,7 +1,7 @@
-<div class="title-group">
+<!-- <div class="title-group">
     <h1 class="mat-h1">Login</h1>
     <mat-divider fxFlex="1 0"></mat-divider>
-  </div>
+  </div> -->
   <!-- <div class="inner-wrapper">
     
         <form [formGroup]="playerForm" (ngSubmit)="submitPlayerForm()" #resetPlayerForm="ngForm" novalidate>
@@ -20,7 +20,7 @@
     </form>
 </div> -->
 
-<div class="inner-wrapper" >
+<!-- <div class="inner-wrapper" >
 
     <mat-card class="box">
       <mat-card-header>
@@ -41,4 +41,28 @@
       </form>
     </mat-card>
   
+  </div> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<div class="container-fluid" style="margin-top:5em">
+<div class="col-md-9 col-lg-4 mx-auto">
+<form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
+  <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
+  <label for="inputEmail" class="sr-only">Username</label>
+  <input type="email"  formControlName="email" class="form-control" placeholder="Username" required autofocus><br>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" formControlName="password" placeholder="Password" required>
+  <div class="checkbox mb-3">
+      <br>
+    <!-- <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label> -->
   </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+  <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
+</form>
+</div>
+</div>
+

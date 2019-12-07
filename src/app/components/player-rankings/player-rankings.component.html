@@ -10,15 +10,16 @@
 
   <nav style="margin-left:10em">
     <a id="toggle-pos" routerLink="/player-rankings">Player Rankings</a>
-    <a routerLink="/login">Admin</a>
+    <a routerLink="/log-in">Admin</a>
 </nav>
 
 <div class="title-group">
   <mat-toolbar-row>
-      <form [formGroup]="searchForm">
+      <!-- <form [formGroup]="searchForm" >  -->
+      <form>
         <span id='searchBar'>
           <mat-icon class="search-icon" aria-hidden="false" aria-label="Search">search</mat-icon>
-          <input matInput placeholder="search" formControlName="search"  (input)="setSearchWord($event)">
+          <input matInput placeholder="search">
         </span>
       </form>
       <span class="example-spacer"></span>
