@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GamesListComponent } from './components/games-list/games-list.component';
 import { PlayerRankingsComponent } from './components/player-rankings/player-rankings.component';
 import { JoinGameComponent } from './components/join-game/join-game.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { JoinGameComponent } from './components/join-game/join-game.component';
     PlayerListComponent,
     GamesListComponent,
     PlayerRankingsComponent,
-    JoinGameComponent
+    JoinGameComponent,
+    LoginComponent
     
   ],
   imports: [
