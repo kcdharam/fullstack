@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewChild, HostListener, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { ApiService } from './shared/api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,11 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(public apiService: ApiService) { }
+
+  logout() {
+    this.apiService.doLogout()
+  }
   opened = true;
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
 
