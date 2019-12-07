@@ -13,6 +13,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 import { AuthGuard } from "./shared/auth.guard";
+//dharamone
+import { LoginComponent } from './components/login/login.component';
+
 const routes: Routes = [
   //{ path: '', pathMatch: 'full', redirectTo: 'player-rankings' },
   { path: '', redirectTo: '/log-in', pathMatch: 'full' },
@@ -22,10 +25,14 @@ const routes: Routes = [
   { path: 'games-list', component: GamesListComponent },
   { path: 'player-rankings', component: PlayerRankingsComponent },
   { path: 'join-game/:id', component: JoinGameComponent },
+
   
   { path: 'log-in', component: SigninComponent },
   { path: 'sign-up', component: SignupComponent },
   { path: 'user-profile/:id', component: UserProfileComponent, canActivate: [AuthGuard] }
+  
+  //dharamone
+  { path: 'login', component: LoginComponent }
 ];
 
 

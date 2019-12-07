@@ -15,12 +15,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GamesListComponent } from './components/games-list/games-list.component';
 import { PlayerRankingsComponent } from './components/player-rankings/player-rankings.component';
 import { JoinGameComponent } from './components/join-game/join-game.component';
+
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/authconfig.interceptor';
+//dharam
+import { LoginComponent } from './components/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -31,9 +35,13 @@ import { AuthInterceptor } from './shared/authconfig.interceptor';
     GamesListComponent,
     PlayerRankingsComponent,
     JoinGameComponent,
+
     SigninComponent,
     SignupComponent,
-    UserProfileComponent
+    UserProfileComponent,
+//dharam
+    LoginComponent
+
     
   ],
   imports: [
