@@ -7,11 +7,22 @@
 
   <!-- <p *ngIf="PlayerData.length <= 0" class="no-data">There is no player added yet!</p>
   *ngIf="playerData.length > 0-->
+  <!-- <mat-toolbar>
+  <mat-card>
+  <div id="button">
+  <button mat-flat-button color="primary" [routerLink]="['/log-in']" >Login</button>
+  </div>
+</mat-card>
+</mat-toolbar> -->
 
-  <nav style="margin-left:10em">
-    <a id="toggle-pos" routerLink="/player-rankings">Player Rankings</a>
-    <a routerLink="/log-in">Admin</a>
-</nav>
+<mat-toolbar>
+ 
+ <button mat-button mat-align="center" style="width : 50%" routerLink="/player-rankings">Player Rankings</button>
+ <button mat-button mat-align="center" style="width : 50%" routerLink="/log-in">Admin</button>
+
+
+</mat-toolbar>
+
 
 <div class="title-group">
   <mat-toolbar-row>
