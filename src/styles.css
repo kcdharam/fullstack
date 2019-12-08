@@ -125,6 +125,35 @@ table {
 body .push-right {
   margin-right: 10px;
 }
+.mat-sidenav-container {
+  height: 100%;
+  display: flex;
+  flex: 1 1 auto;
+}
+.mat-sidenav,
+.mat-sidenav-content {
+  padding: 15px;
+}
+.mat-sidenav-content {
+  padding: 25px 40px 0;
+}
+mat-sidenav mat-icon {
+  margin-right: 12px;
+}
+.mat-sidenav-content {
+  padding: 20px 20px 0;
+}
+
+
+
+.mat-sidenav {
+  width: 230px;
+}
+
+.mat-sidenav {
+  background-color: #F2F2F2;
+  width: 250px;
+}
 
 .no-data {
   text-align: center;

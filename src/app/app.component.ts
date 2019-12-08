@@ -15,15 +15,15 @@ export class AppComponent {
     this.apiService.doLogout()
   }
   opened = true;
-  //@ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
+  @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
 
   ngOnInit() {
     console.log(window.innerWidth)
     if (window.innerWidth < 768) {
-      //this.sidenav.fixedTopGap = 55;
+      this.sidenav.fixedTopGap = 55;
       this.opened = false;
     } else {
-      //this.sidenav.fixedTopGap = 55;
+      this.sidenav.fixedTopGap = 55;
       this.opened = true;
     }
   }
@@ -31,10 +31,10 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     if (event.target.innerWidth < 768) {
-      //this.sidenav.fixedTopGap = 55;
+      this.sidenav.fixedTopGap = 55;
       this.opened = false;
     } else {
-      //this.sidenav.fixedTopGap = 55
+      this.sidenav.fixedTopGap = 55
       this.opened = true;
     }
   }

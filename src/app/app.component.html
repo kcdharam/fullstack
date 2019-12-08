@@ -9,53 +9,24 @@
     <a id="toggle-pos" routerLink="/player-rankings">Player Rankings</a>
     <a routerLink="/games-list">Admin</a>
 </nav> -->
-<router-outlet></router-outlet>
 
-<!-- <mat-sidenav-container> -->
+
+<mat-sidenav-container>
 
   <!-- Sidenav -->
-  <!-- <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
     [fixedTopGap]>
     <mat-nav-list>
-        <a mat-list-item routerLinkActive="active" routerLink="/add-player">
-          <mat-icon>format_list_bulleted</mat-icon> Add Player
-        </a>
-      <a mat-list-item routerLinkActive="active" routerLink="/player-list">
-        <mat-icon>format_list_bulleted</mat-icon> View Players
-      </a>
-      <a mat-list-item routerLinkActive="active" routerLink="/games-list">
-        <mat-icon>format_list_bulleted</mat-icon> View Games
-      </a>
+        <div class="logo-nav">
+            <img src="./assets/download.png">
+        </div>
+     
+      </mat-nav-list>
+  </mat-sidenav>
 
-      <a mat-list-item routerLinkActive="active" routerLink="/player-rankings">
-        <mat-icon>format_list_bulleted</mat-icon> Player rankings
-      </a>
-
-      <a mat-list-item routerLinkActive="active" routerLink="/join-game">
-        <mat-icon>format_list_bulleted</mat-icon> Join game
-      </a>
-      <a mat-list-item routerLinkActive="active" *ngIf="!this.apiService.isLoggedIn" routerLink="/log-in">
-        <mat-icon>format_list_bulleted</mat-icon> signin
-      </a>
-      <a mat-list-item routerLinkActive="active" *ngIf="!this.apiService.isLoggedIn" routerLink="/sign-up">
-        <mat-icon>format_list_bulleted</mat-icon> signup
-      </a>
-
-    <a mat-list-item *ngIf="this.authService.isLoggedIn" >User Profile</a> -->
-    <!-- <a mat-list-item *ngIf="!this.authService.isLoggedIn" routerLinkActive="active" routerLink="/log-in">
-      <mat-icon>format_list_bulleted</mat-icon> Sign
-      in</a>
-
-  <a mat-list-item *ngIf="!this.authService.isLoggedIn" routerLinkActive="active" routerLink="/sign-up">
-    <mat-icon>format_list_bulleted</mat-icon>Sign up</a> -->
-
-  <!-- <button (click)="logout()" *ngIf="this.authService.isLoggedIn" type="button" class="btn btn-danger">Logout</button> -->
-
-    <!-- </mat-nav-list>
-  </mat-sidenav> -->
-
-  <!-- Main content -->
-  <!-- <mat-sidenav-content>
+ <!-- Main content -->
+  <mat-sidenav-content>
+      <router-outlet></router-outlet>
 
   </mat-sidenav-content>
-</mat-sidenav-container> -->
+</mat-sidenav-container> 
