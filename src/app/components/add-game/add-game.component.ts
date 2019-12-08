@@ -9,22 +9,20 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-add-player',
-  templateUrl: './add-player.component.html',
-  styleUrls: ['./add-player.component.css']
+  selector: 'app-add-game',
+  templateUrl: './add-game.component.html',
+  styleUrls: ['./add-game.component.css']
 })
-export class AddPlayerComponent implements OnInit {
-
-  visible = true;
+export class AddGameComponent implements OnInit {visible = true;
   selectable = true;
   removable = true;
   addOnBlur = true;
   @ViewChild('chipList', { static: true }) chipList;
-  @ViewChild('resetPlayerForm', { static: true }) myNgForm;
+  @ViewChild('resetGameForm', { static: true }) myNgForm;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  playerForm: FormGroup;
+  gameForm: FormGroup;
 
-  RankArray: any = [1, 2, 3, 4, 5, 6,7,8,9,10];
+  //RankArray: any = [1, 2, 3, 4, 5, 6,7,8,9,10];
   StatusArray: any = ['Available', 'Unavailable'];
   GamesList: any = [];
 
@@ -51,12 +49,13 @@ export class AddPlayerComponent implements OnInit {
 
   /* Reactive book form */
   submitBookForm() {
-    this.playerForm = this.fb.group({
-      player_name: ['', [Validators.required]],
-      rank: ['', [Validators.required]],
-      score: ['', [Validators.required]],
-      time: ['', [Validators.required]],
-      gamesPlayed: ['', [Validators.required]],
+    this.gameForm = this.fb.group({
+      game_title: ['', [Validators.required]],
+      platform: ['', [Validators.required]],
+      genre: ['', [Validators.required]],
+      rating: ['', [Validators.required]],
+      publisher: ['', [Validators.required]],
+      release: ['', [Validators.required]],
       status: ['', [Validators.required]],
     })
   }
@@ -74,14 +73,14 @@ export class AddPlayerComponent implements OnInit {
   
   /* Get errors */
   public handleError = (controlName: string, errorName: string) => {
-    return this.playerForm.controls[controlName].hasError(errorName);
+    return this.gameForm.controls[controlName].hasError(errorName);
   }  
 
   /* Submit book */
-  submitPlayerForm() {
-    if (this.playerForm.valid) {
-      this.playerApi.AddPlayer(this.playerForm.value).subscribe(res => {
-        this.ngZone.run(() => this.router.navigateByUrl('/player-list'))
+  submitGameForm() {
+    if (this.gameForm.valid) {
+      this.gameApi.AddGame(this.gameForm.value).subscribe(res => {
+        this.ngZone.run(() => this.router.navigateByUrl('/games-list'))
       });
     }
   }

@@ -13,6 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 export class PlayerListComponent implements OnInit {
 
   PlayerData: any = [];
+  searchKey: string;
+  
   dataSource: MatTableDataSource<Player>;
   @ViewChild(MatPaginator, {static: true} ) paginator: MatPaginator;
   displayedColumns: string[] = ['_id', 'player_name', 'rank', 'score', 'time', 'gamesPlayed', 'status', 'action'];
@@ -36,6 +38,14 @@ export class PlayerListComponent implements OnInit {
       this.dataSource.data = data;
       this.playerApi.DeletePlayer(e._id).subscribe()
     }
+  }
+  onSearchClear() {
+    this.searchKey = "";
+    this.applyFilter();
+  }
+
+  applyFilter() {
+    this.dataSource.filter = this.searchKey.trim().toLowerCase();
   }
 
 }

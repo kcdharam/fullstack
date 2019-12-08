@@ -32,7 +32,6 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '~/GamerLobby')));
 app.use('/', express.static(path.join(__dirname, '~/GamerLobby')));
 app.use('/api', router)
-// app.use('/api/player-list', playerRoute)
 app.use('/api/players', playerRoute)
 app.use('/api/games', gameRoute)
 
