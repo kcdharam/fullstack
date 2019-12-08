@@ -50,6 +50,7 @@ export class EditPlayerComponent implements OnInit {
       status: [data.status, [Validators.required]]
       })      
     })
+    
     this.gameApi.GetGames().subscribe((data => {
       console.log(data)
  

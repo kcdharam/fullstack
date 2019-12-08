@@ -86,7 +86,7 @@
                 <div class="full-wrapper button-wrapper">
                   <div class="button-wrapper">
                     <button mat-flat-button color="warn">Add</button>
-                    <button mat-raised-button color="primary" class="push-right"
+                    <button mat-raised-button *ngIf="this.playerApi.isLoggedIn" color="primary" class="push-right"
                     [routerLink]="['/player-list/']">Cancel</button>
                   </div>
                 </div>

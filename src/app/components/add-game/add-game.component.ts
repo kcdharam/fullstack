@@ -38,6 +38,7 @@ export class AddGameComponent implements OnInit {visible = true;
     private playerApi: ApiService,
     private gameApi: ApiService,
     private actRoute: ActivatedRoute
+
   ) { 
      this.gameApi.GetGames().subscribe((data => {
       console.log(data)

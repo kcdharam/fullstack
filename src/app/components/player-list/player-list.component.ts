@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PlayerListComponent implements OnInit {
 
   PlayerData: any = [];
+  
   searchKey: string;
   
   dataSource: MatTableDataSource<Player>;
@@ -31,6 +32,7 @@ export class PlayerListComponent implements OnInit {
 
   ngOnInit() { }
 
+
   deletePlayer(index: number, e){
     if(window.confirm('Are you sure')) {
       const data = this.dataSource.data;
@@ -46,6 +48,10 @@ export class PlayerListComponent implements OnInit {
 
   applyFilter() {
     this.dataSource.filter = this.searchKey.trim().toLowerCase();
+  }
+
+  logout() {
+    this.playerApi.doLogout()
   }
 
 }

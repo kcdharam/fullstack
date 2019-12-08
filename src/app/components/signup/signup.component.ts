@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
+  roles: any = ['admin'];
 
   constructor(
     public fb: FormBuilder,
@@ -23,6 +24,7 @@ export class SignupComponent implements OnInit {
       password: ['']
     })
   }
+  
 
   ngOnInit() { }
 

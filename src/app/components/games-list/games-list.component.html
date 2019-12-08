@@ -1,8 +1,13 @@
 
+  <br>
+  <button mat-raised-button *ngIf="this.gameApi.isLoggedIn" style="float:right; font-size:120%; margin-right:15px"  routerLink="/player-rankings" (click)="logout()">Logout</button>
+  <br>
+
+ 
  <mat-toolbar>
  
- <button mat-stroked-button mat-align="center" style="width : 50%; font-size:100%;" routerLink="/player-list">Players</button>
- <button mat-raised-button mat-align="center" style="width : 50%; font-size:100%;" routerLink="/games-list">Games</button>
+ <button mat-stroked-button *ngIf="this.gameApi.isLoggedIn" mat-align="center" style="width : 50%; font-size:100%;" routerLink="/player-list">Players</button>
+ <button mat-raised-button *ngIf="this.gameApi.isLoggedIn" mat-align="center" style="width : 50%; font-size:100%;" routerLink="/games-list">Games</button>
 
 
 </mat-toolbar>
