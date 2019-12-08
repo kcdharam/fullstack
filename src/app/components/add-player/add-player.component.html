@@ -1,4 +1,4 @@
-<!-- Title group  -->
+
 <div class="title-group">
   <h1 class="mat-h1">Add Player</h1>
   <mat-divider fxFlex="1 0"></mat-divider>
@@ -9,7 +9,7 @@
 
       <mat-card>
           <div class="controlers-wrapper">
-            <!-- Name -->
+   
             <mat-form-field class="example-full-width">
               <input matInput placeholder="Player name" formControlName="player_name">
               <mat-error *ngIf="handleError('player_name', 'required')">
@@ -18,7 +18,7 @@
             </mat-form-field>
     
     
-            <!-- Email -->
+        
             <mat-form-field>
                 <mat-label>Rank</mat-label>
                 <mat-select [(value)]="selectedRank" formControlName="rank">
@@ -29,20 +29,13 @@
                   rank is required
                 </mat-error>
               </mat-form-field>
-            <!-- <mat-form-field class="example-full-width">
-              <input matInput placeholder="Player Rank" formControlName="rank">
-              <mat-error *ngIf="handleError('rank', 'required')">
-                You must provide a<strong>player rank</strong>
-              </mat-error>
-            </mat-form-field> -->
+           
     
-            <!-- Section -->
+       
             <mat-form-field>
-              <!-- <mat-label>Section</mat-label> -->
+              
               <input matInput placeholder="Player Score" formControlName="score">
-                <!-- <mat-option [value]="sectioinArray" *ngFor="let sectioinArray of SectioinArray">{{sectioinArray}}
-                </mat-option> -->
-              <!-- </mat-select> -->
+              
               <mat-error *ngIf="handleError('score', 'required')">
                 Score is required
               </mat-error>
@@ -50,10 +43,10 @@
           </div>
         </mat-card>
 
-        <!-- Right block -->
+     
       <mat-card>
         <div class="controlers-wrapper">
-          <!-- Add subjects -->
+        
           <mat-form-field class="example-full-width">
               <input matInput placeholder="Player Time" formControlName="time">
               <mat-error *ngIf="handleError('time', 'required')">
@@ -74,19 +67,6 @@
                 </mat-error>
               </mat-form-field>
 
-            <!-- <mat-form-field class="example-full-width">
-                <input matInput placeholder="Player GamesPlayed" formControlName="gamesPlayed">
-                <mat-error *ngIf="handleError('gamesPlayed', 'required')">
-                  You must provide a<strong>player time</strong>
-                </mat-error>
-              </mat-form-field> -->
-
-              <!-- <div class="misc-bottom-padding">
-                  <mat-label>Status:</mat-label>
-                  <mat-radio-group aria-label="Select an option" formControlName="status">
-                    <mat-radio-button value="Active">Activate</mat-radio-button>
-                    <mat-radio-button value="Deactivate">Deactivate</mat-radio-button>
-                  </mat-radio-group> -->
                   <mat-form-field>
                       <mat-label>Status</mat-label>
                       <mat-select [(value)]="selectedStatus" formControlName="status">

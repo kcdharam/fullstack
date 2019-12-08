@@ -7,27 +7,27 @@ import { ApiService } from './../../shared/api.service';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
-  selector: 'app-edit-player',
-  templateUrl: './edit-player.component.html',
-  styleUrls: ['./edit-player.component.css']
+  selector: 'app-edit-game',
+  templateUrl: './edit-game.component.html',
+  styleUrls: ['./edit-game.component.css']
 })
-export class EditPlayerComponent implements OnInit {
+export class EditGameComponent implements OnInit {
 
   visible = true;
   selectable = true;
   removable = true;
   addOnBlur = true;
   @ViewChild('chipList', {static: true}) chipList;
-  @ViewChild('resetPlayerForm', {static: true}) myNgForm;
+  @ViewChild('resetGameForm', {static: true}) myNgForm;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  playerForm: FormGroup;
-  RankArray: any = [1, 2, 3, 4, 5, 6,7,8,9,10];
+  gameForm: FormGroup;
+  //RankArray: any = [1, 2, 3, 4, 5, 6,7,8,9,10];
   StatusArray: any = ['Available', 'Unavailable'];
   //GamesArray: any = ['game1', 'game2', 'game3', 'game4', 'game5'];
   GamesList: any = [];
 
   ngOnInit() {
-    this.updatePlayerBForm();
+    this.updateGameBForm();
   }
 
   constructor(
@@ -39,37 +39,39 @@ export class EditPlayerComponent implements OnInit {
     private gameApi: ApiService
   ) { 
     var id = this.actRoute.snapshot.paramMap.get('id');
-    this.playerApi.GetPlayer(id).subscribe(data => {
+    this.gameApi.GetGame(id).subscribe(data => {
    
-      this.playerForm = this.fb.group({
-      player_name: [data.player_name, [Validators.required]],
-      rank: [data.rank, [Validators.required]],
-      score: [data.score, [Validators.required]],
-      time: [data.time, [Validators.required]],
-      gamesPlayed: [data.gamesPlayed, [Validators.required]],
-      status: [data.status, [Validators.required]]
+      this.gameForm = this.fb.group({
+      game_title: [data.game_title, [Validators.required]],
+      platform: [data.platform, [Validators.required]],
+      genre: [data.genre, [Validators.required]],
+      rating: [data.rating, [Validators.required]],
+      publisher: [data.publisher, [Validators.required]],
+      release: [data.release, [Validators.required]],
+      status: [data.status, [Validators.required]],
       })      
     })
     this.gameApi.GetGames().subscribe((data => {
       console.log(data)
- 
+     
       this.GamesList = data;
     }))    
   }
 
-
-  updatePlayerBForm() {
-    this.playerForm = this.fb.group({
-      player_name: ['', [Validators.required]],
-      rank: ['', [Validators.required]],
-      score: ['', [Validators.required]],
-      time: ['', [Validators.required]],
-      gamesPlayed: ['', [Validators.required]],
+  /* Reactive book form */
+  updateGameBForm() {
+    this.gameForm = this.fb.group({
+      game_title: ['', [Validators.required]],
+      platform: ['', [Validators.required]],
+      genre: ['', [Validators.required]],
+      rating: ['', [Validators.required]],
+      publisher: ['', [Validators.required]],
+      release: ['', [Validators.required]],
       status: ['', [Validators.required]]
     })
   }
 
-  /* Add dynamic languages */
+
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
@@ -83,26 +85,18 @@ export class EditPlayerComponent implements OnInit {
   
   /* Get errors */
   public handleError = (controlName: string, errorName: string) => {
-    return this.playerForm.controls[controlName].hasError(errorName);
+    return this.gameForm.controls[controlName].hasError(errorName);
   }  
 
-  /* Update book */
-  updatePlayerForm() {
-    console.log(this.playerForm.value)
+  /* Update game */
+  updateGameForm() {
+    console.log(this.gameForm.value)
     var id = this.actRoute.snapshot.paramMap.get('id');
     if (window.confirm('Are you sure you want to update?')) {
-      this.playerApi.UpdatePlayer(id, this.playerForm.value).subscribe( res => {
-        this.ngZone.run(() => this.router.navigateByUrl('/player-list'))
+      this.gameApi.UpdateGame(id, this.gameForm.value).subscribe( res => {
+        this.ngZone.run(() => this.router.navigateByUrl('/games-list'))
       });
     }
   }
   
 }
-
-
-
-
-
-
-
-  

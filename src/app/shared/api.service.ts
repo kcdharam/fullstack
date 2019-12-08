@@ -82,6 +82,14 @@ export class ApiService {
       )
   }
 
+  // Add game
+  AddGame(data: Player): Observable<any> {
+    let API_URL = `${this.endpoint}/games/add-game`;
+    return this.http.post(API_URL, data).pipe(
+      catchError(this.errorMgmt)
+      )
+  }
+
   
   // Get all player
   GetPlayers() {
@@ -121,14 +129,13 @@ export class ApiService {
       catchError(this.errorMgmt)
     )
   }
+  UpdateGame(id, data: Game): Observable<any> {
+    let API_URL = `${this.endpoint}/games/update-game/${id}`;
+    return this.http.put(API_URL, data, { headers: this.headers }).pipe(
+      catchError(this.errorMgmt)
+    )
+  }
 
-  // JoinPlayer(id, data: Player["status"]): Observable<any> {
-  //   let API_URL = `${this.endpoint}/join-player/${id}`;
-  //   return this.http.put(API_URL, data, { headers: this.headers }).pipe(
-  //     catchError(this.errorMgmt)
-  //   )
-  // }
-  
 
 
 
@@ -136,6 +143,13 @@ export class ApiService {
  
   DeletePlayer(id): Observable<any> {
     var API_URL = `${this.endpoint}/players/delete-player/${id}`;
+    return this.http.delete(API_URL).pipe(
+      catchError(this.errorMgmt)
+    )
+  }
+
+  DeleteGame(id): Observable<any> {
+    var API_URL = `${this.endpoint}/games/delete-game/${id}`;
     return this.http.delete(API_URL).pipe(
       catchError(this.errorMgmt)
     )

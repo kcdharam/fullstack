@@ -3,6 +3,8 @@ import { ApiService } from './../../shared/api.service';
 import { ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Player } from 'src/app/shared/player';
+import { filter } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-player-rankings',
@@ -12,6 +14,8 @@ import { Player } from 'src/app/shared/player';
 export class PlayerRankingsComponent implements OnInit {
   
   enableJoin: boolean = false;
+  searchKey: string;
+
 
   PlayerData: any = [];
   dataSource: MatTableDataSource<Player>;
@@ -29,8 +33,6 @@ export class PlayerRankingsComponent implements OnInit {
        
   }
 
- 
-
   // joinPlayer(){
   //   if() {
   //     const data = this.dataSource.data;
@@ -41,5 +43,14 @@ export class PlayerRankingsComponent implements OnInit {
   // }
 
   ngOnInit() { }
+
+  onSearchClear() {
+    this.searchKey = "";
+    this.applyFilter();
+  }
+
+  applyFilter() {
+    this.dataSource.filter = this.searchKey.trim().toLowerCase();
+  }
 
 }

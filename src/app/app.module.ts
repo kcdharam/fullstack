@@ -22,6 +22,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/authconfig.interceptor';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AddGameComponent } from './components/add-game/add-game.component';
+import { EditGameComponent } from './components/edit-game/edit-game.component';
 
 
 
@@ -37,7 +40,9 @@ import { AuthInterceptor } from './shared/authconfig.interceptor';
 
     SigninComponent,
     SignupComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    AddGameComponent,
+    EditGameComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,8 @@ import { AuthInterceptor } from './shared/authconfig.interceptor';
     AngularMaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
     
   ],
   providers: [ApiService,
