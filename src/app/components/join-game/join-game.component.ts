@@ -5,6 +5,7 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material';
 import { ApiService } from './../../shared/api.service';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Game } from 'src/app/shared/game';
 
 @Component({
   selector: 'app-join-game',
@@ -13,6 +14,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 })
 export class JoinGameComponent implements OnInit {
   visible = true;
+  GameData: any = [];
   playerData: any = [];
   selectable = true;
   removable = true;
@@ -34,8 +36,10 @@ export class JoinGameComponent implements OnInit {
     private router: Router,
     private ngZone: NgZone,
     private actRoute: ActivatedRoute,
-    private playerApi: ApiService
+    private playerApi: ApiService,
+    
   ) { 
+
     var id = this.actRoute.snapshot.paramMap.get('id');
     this.playerApi.GetPlayer(id).subscribe(data => {
       //console.log(data.subjects)
@@ -49,7 +53,9 @@ export class JoinGameComponent implements OnInit {
       gamesPlayed: {value: data.gamesPlayed, disabled:true},
       gamesPlayed1: ['', [Validators.required]]
       })      
-    })    
+    }) 
+
+
   }
 
 
