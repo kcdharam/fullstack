@@ -30,6 +30,12 @@ export class SigninComponent implements OnInit {
   }
 
   loginUser() {
-    this.apiService.signIn(this.signinForm.value)
+    if(this.signinForm.valid){
+      this.apiService.signIn(this.signinForm.value)
+    }
+    else{
+      alert('Please enter correct username and password');
+    }
+    
   }
 }
