@@ -3,7 +3,7 @@
     <mat-divider fxFlex="1 0"></mat-divider>
   </div> -->
   <!-- <div class="inner-wrapper">
-    
+
         <form [formGroup]="playerForm" (ngSubmit)="submitPlayerForm()" #resetPlayerForm="ngForm" novalidate>
 
     <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
@@ -26,13 +26,13 @@
       <mat-card-header>
         <mat-card-title>Log in</mat-card-title>
       </mat-card-header>
-  
+
       <form class="example-form" [formGroup]="signinForm" (ngSubmit)="loginUser()">
         <mat-card-content>
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Username" type="email" formControlName="email" required>
           </mat-form-field>
-  
+
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Password" formControlName="password" >
           </mat-form-field>
@@ -40,7 +40,7 @@
         <button mat-stroked-button color="accent"  type="submit" class="btn-block">Log in</button>
       </form>
     </mat-card>
-  
+
   </div> -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -50,10 +50,10 @@
 <div class="col-md-9 col-lg-4 mx-auto">
 <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
   <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
-  <label for="inputEmail" class="sr-only">Username</label>
-  <input type="email"  formControlName="email" class="form-control" placeholder="Username" required autofocus><br>
+  <label for="inputEmail" class="sr-only">Email</label>
+  <input type="email"  formControlName="email" class="form-control" placeholder="Email" required autofocus><br>
   <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" formControlName="password" placeholder="Password" required>
+  <input type="password" formControlName="password" placeholder="Password" class="form-control" required>
   <div class="checkbox mb-3">
       <br>
     <!-- <label>
@@ -61,6 +61,8 @@
     </label> -->
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+  <br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">No account? Please register.</button>
   <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
 </form>
 </div>
