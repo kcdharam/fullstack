@@ -16,6 +16,7 @@ export class GamesListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true} ) paginator: MatPaginator;
   displayedColumns: string[] = ['_id', 'game_title', 'platform', 'genre', 'rating', 'publisher','release', 'status' ];
 
+
   constructor(private gameApi: ApiService) {
     this.gameApi.GetGames().subscribe(data => {
       this.GameData = data;
