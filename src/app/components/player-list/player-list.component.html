@@ -3,13 +3,13 @@
 <!-- Title group  -->
 
 <br>
-<button style="float:right; font-size:120%; margin-right:15px"  routerLink="/player-rankings">Logout</button>
+<button mat-raised-button *ngIf="this.playerApi.isLoggedIn" style="float:right; font-size:120%; margin-right:15px"  routerLink="/player-rankings" (click)="logout()">Logout</button>
 <br>
 
 <mat-toolbar>
 
- <button mat-raised-button mat-align="center" style="width : 50%; font-size:100%;" routerLink="/player-list">Players</button>
- <button mat-stroked-button mat-align="center" style="width : 50%; font-size:100%;" routerLink="/games-list">Games</button>
+ <button mat-raised-button *ngIf="this.playerApi.isLoggedIn" mat-align="center" style="width : 50%; font-size:100%;" routerLink="/player-list">Players</button>
+ <button mat-stroked-button *ngIf="this.playerApi.isLoggedIn" mat-align="center" style="width : 50%; font-size:100%;" routerLink="/games-list">Games</button>
 
 
 </mat-toolbar>
@@ -22,6 +22,7 @@
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
+  
   
   <button mat-raised-button routerLink="/add-player">
     <mat-icon>add</mat-icon>Add new player

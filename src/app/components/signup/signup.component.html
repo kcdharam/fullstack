@@ -1,7 +1,7 @@
 <div class="title-group">
-        <h1 class="mat-h1">Login</h1>
-        <mat-divider fxFlex="1 0"></mat-divider>
-      </div>
+    <h1 class="mat-h1">Please register with email and password(5-8 characters) </h1>
+    <mat-divider fxFlex="1 0"></mat-divider>
+</div>
 
 <!-- <div class="inner-wrapper">
     <form class="form-signin" [formGroup]="signupForm" (ngSubmit)="registerUser()">
@@ -22,14 +22,16 @@
     </form>
 </div> -->
 <div class="login-wrapper" >
-        <mat-card class="box">
-          <mat-card-header>
-            <mat-card-title>Register</mat-card-title>
-          </mat-card-header>
+        
+          
       
+          <div class="inner-wrapper">
           <form class="example-form" [formGroup]="signupForm" (ngSubmit)="registerUser()">
+              <mat-card>
+              <div class="controlers-wrapper">
+                    
       
-            <mat-card-content>
+            
               <mat-form-field class="example-full-width">
                 <input matInput placeholder="Username" formControlName="name" >
               </mat-form-field>
@@ -42,18 +44,20 @@
                 <input matInput placeholder="Password" formControlName="password">
               </mat-form-field>
       
-              <!-- <mat-form-field class="example-full-width">
+              <mat-form-field class="example-full-width">
                 <mat-label>Choose a role...</mat-label>
                 <mat-select [(value)]="selected">
-                  <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}
+                  <mat-option [value]="roles" *ngFor="let roles of roles">{{roles}}
                   </mat-option>
                 </mat-select>
-              </mat-form-field> -->
+              </mat-form-field>
       
-            </mat-card-content>
+           
       
             <button mat-stroked-button color="accent" type="submit" class="btn-block">Register</button>
-      
+      </div>
+      </mat-card>
           </form>
-        </mat-card>
+        </div>
+        
       </div>

@@ -6,6 +6,7 @@ import { Player } from 'src/app/shared/player';
 import { filter } from 'rxjs/operators';
 
 
+
 @Component({
   selector: 'app-player-rankings',
   templateUrl: './player-rankings.component.html',
@@ -32,15 +33,6 @@ export class PlayerRankingsComponent implements OnInit {
     }) 
        
   }
-
-  // joinPlayer(){
-  //   if() {
-  //     const data = this.dataSource.data;
-  //     data.splice((this.paginator.pageIndex * this.paginator.pageSize) + index, 1);
-  //     this.dataSource.data = data;
-  //     this.playerApi.DeletePlayer(e._id).subscribe()
-  //   }
-  // }
 
   ngOnInit() { }
 

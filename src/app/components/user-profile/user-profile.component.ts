@@ -11,6 +11,7 @@ export class UserProfileComponent implements OnInit {
 
   currentUser: Object = {};
 
+  
   constructor(
     public apiService: ApiService,
     private actRoute: ActivatedRoute
