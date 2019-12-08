@@ -23,7 +23,8 @@ export class EditPlayerComponent implements OnInit {
   playerForm: FormGroup;
   RankArray: any = [1, 2, 3, 4, 5, 6,7,8,9,10];
   StatusArray: any = ['Available', 'Unavailable'];
-  GamesArray: any = ['game1', 'game2', 'game3', 'game4', 'game5'];
+  //GamesArray: any = ['game1', 'game2', 'game3', 'game4', 'game5'];
+  GamesList: any = [];
 
   ngOnInit() {
     this.updatePlayerBForm();
@@ -34,7 +35,8 @@ export class EditPlayerComponent implements OnInit {
     private router: Router,
     private ngZone: NgZone,
     private actRoute: ActivatedRoute,
-    private playerApi: ApiService
+    private playerApi: ApiService,
+    private gameApi: ApiService
   ) { 
     var id = this.actRoute.snapshot.paramMap.get('id');
     this.playerApi.GetPlayer(id).subscribe(data => {
@@ -48,7 +50,12 @@ export class EditPlayerComponent implements OnInit {
       gamesPlayed: [data.gamesPlayed, [Validators.required]],
       status: [data.status, [Validators.required]]
       })      
-    })    
+    })
+    this.gameApi.GetGames().subscribe((data => {
+      console.log(data)
+      //this.subjectArray = data.subjects;
+      this.GamesList = data;
+    }))    
   }
 
   /* Reactive book form */

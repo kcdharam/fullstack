@@ -13,26 +13,29 @@
             <div class="controlers-wrapper" >
                     
               <!-- Name -->
+              <mat-label>Player Name</mat-label> 
                 <mat-form-field class="example-full-width" >
                     
-                    <input matInput placeholder="Player name" formControlName="player_name" > 
+                    <input matInput formControlName="player_name" > 
                     <mat-error *ngIf="handleError('player_name', 'required')">
                       You must provide a<strong>player name</strong>
                     </mat-error>
                 </mat-form-field>
       
               <!-- Email -->
+              <mat-label>Player Rank</mat-label> 
               <mat-form-field class="example-full-width">
                     
-                    <input matInput placeholder="Player rank" formControlName="rank"> 
+                    <input matInput formControlName="rank"> 
                     <mat-error *ngIf="handleError('rank', 'required')">
                       You must provide a<strong>player rank</strong>
                     </mat-error>
                 </mat-form-field>
 
+                <mat-label>Player Score</mat-label> 
                 <mat-form-field>
                             <!-- <mat-label>Section</mat-label> -->
-                    <input matInput placeholder="Player Score" formControlName="score">
+                    <input matInput formControlName="score">
                                 <!-- <mat-option [value]="sectioinArray" *ngFor="let sectioinArray of SectioinArray">{{sectioinArray}}
                                 </mat-option> -->
                                 <!-- </mat-select> -->
@@ -46,29 +49,50 @@
         <mat-card>
             <div class="controlers-wrapper">
                           <!-- Add subjects -->
+                <mat-label>Player Time</mat-label>          
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Player Time" formControlName="time">
+                    <input matInput  formControlName="time">
                     <mat-error *ngIf="handleError('time', 'required')">
                         You must provide a<strong>player time</strong>
                     </mat-error>
                 </mat-form-field>
-
+                
+                <mat-label>Favorite Game</mat-label> 
                 <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Favorite Game" formControlName="gamesPlayed">
+                        <input matInput formControlName="gamesPlayed">
                         <!-- <mat-error *ngIf="handleError('time', 'required')">
                             You must provide a<strong>player time</strong>
                         </mat-error> -->
                     </mat-form-field>
+
+                    <!-- <mat-select placeholder="Select a Game" formControlName="game">
+                       <mat-form-field>
+                  <mat-select  formControlName="game">
+                      <div *ngFor="let game of games; let i = index">
+                      <mat-option *ngIf="games[i].status == 'Active'" [value]="games[i].title">{{games[i].title}}
+                      </mat-option>
+                      </div>
+                  </mat-select>
+                  <mat-error *ngIf="handleError('favorite_game', 'required')">
+                      Game is required
+                  </mat-error>
+              </mat-form-field><br>
+            </div>
+
+
+                  </mat-error> -->
                 
-                <mat-form-field >
-                    <mat-label>Customer</mat-label>
-                    <mat-select [(value)]="selectedGames" formControlName="gamesPlayed1">
-                        <mat-option [value]="gamesArray" *ngFor="let gamesArray of GamesArray">{{gamesArray}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="handleError('gamesPlayed', 'required')">
-                        favorite game is required
-                    </mat-error>
+                <mat-label>Select a Game</mat-label>
+              <mat-form-field>
+                  <mat-select  [(value)]="selectedGames" formControlName="gamesAvailable">
+                      <div *ngFor="let game of GamesList; let i = index">
+                      <mat-option *ngIf="GamesList[i].status == 'available'" [value]="GamesList[i].game_title">{{GamesList[i].game_title}}
+                      </mat-option>
+                      </div>
+                  </mat-select>
+                  <mat-error *ngIf="handleError('gamesAvailable', 'required')">
+                      Game is required
+                  </mat-error>
               </mat-form-field>
 
               <!-- <mat-form-field class="example-full-width" >

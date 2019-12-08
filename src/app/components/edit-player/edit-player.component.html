@@ -58,8 +58,10 @@
                 <mat-form-field>
                     <mat-label>Favorite Game</mat-label>
                     <mat-select [(value)]="selectedGames" formControlName="gamesPlayed">
-                        <mat-option [value]="gamesArray" *ngFor="let gamesArray of GamesArray">{{gamesArray}}
-                        </mat-option>
+                        <div *ngFor="let game of GamesList; let i = index">
+                  <mat-option *ngIf="GamesList[i].status == 'available'" [value]="GamesList[i].game_title">{{GamesList[i].game_title}}
+                  </mat-option>
+                  </div>
                     </mat-select>
                     <mat-error *ngIf="handleError('gamesPlayed', 'required')">
                         favorite game is required

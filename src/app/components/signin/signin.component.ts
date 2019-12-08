@@ -25,6 +25,10 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() { }
 
+  public handleError = (controlName: string, errorName: string) => {
+    return this.signinForm.controls[controlName].hasError(errorName);
+  } 
+
   loginUser() {
     this.apiService.signIn(this.signinForm.value)
   }

@@ -31,7 +31,7 @@ export class AddPlayerComponent implements OnInit {
   // gamesArray: GamesPlayed[] = [];
   RankArray: any = [1, 2, 3, 4, 5, 6,7,8,9,10];
   StatusArray: any = ['Available', 'Unavailable'];
-  GamesArray: any = ['game1', 'game2', 'game3', 'game4', 'game5'];
+  GamesList: any = [];
 
 
   ngOnInit() {
@@ -43,8 +43,16 @@ export class AddPlayerComponent implements OnInit {
     private router: Router,
     private ngZone: NgZone,
     private playerApi: ApiService,
+    private gameApi: ApiService,
     private actRoute: ActivatedRoute
-  ) { }
+  ) { 
+     this.gameApi.GetGames().subscribe((data => {
+      console.log(data)
+      //this.subjectArray = data.subjects;
+      this.GamesList = data;
+        
+     }))
+  }
 
   /* Reactive book form */
   submitBookForm() {

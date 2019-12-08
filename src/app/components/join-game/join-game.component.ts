@@ -14,7 +14,6 @@ import { Game } from 'src/app/shared/game';
 })
 export class JoinGameComponent implements OnInit {
   visible = true;
-  GameData: any = [];
   playerData: any = [];
   selectable = true;
   removable = true;
@@ -25,10 +24,12 @@ export class JoinGameComponent implements OnInit {
   playerForm1: FormGroup;
   // RankArray: any = [1, 2, 3, 4, 5, 6,7,8,9,10];
   // StatusArray: any = ['Available', 'Unavailable'];
-   GamesArray: any = ['game1', 'game2', 'game3', 'game4', 'game5'];
+   GamesList: any = [];
+   //GamesArray: any = ['game1', 'game2', 'game3', 'game4', 'game5'];
+  
 
   ngOnInit() {
-    //this.updatePlayerBForm();
+    // this.updatePlayerBForm();
   }
 
   constructor(
@@ -37,6 +38,7 @@ export class JoinGameComponent implements OnInit {
     private ngZone: NgZone,
     private actRoute: ActivatedRoute,
     private playerApi: ApiService,
+    private gameApi: ApiService
     
   ) { 
 
@@ -51,11 +53,16 @@ export class JoinGameComponent implements OnInit {
       score: {value: data.score, disabled:true},
       time: {value: data.time, disabled:true},
       gamesPlayed: {value: data.gamesPlayed, disabled:true},
-      gamesPlayed1: ['', [Validators.required]]
-      })      
-    }) 
-
-
+      gamesAvailable: ['', [Validators.required]],
+      })   
+      })   
+    
+    this.gameApi.GetGames().subscribe((data => {
+      console.log(data)
+      //this.subjectArray = data.subjects;
+      this.GamesList = data;
+        
+    }))
   }
 
 
@@ -67,12 +74,12 @@ export class JoinGameComponent implements OnInit {
   /* Reactive book form */
   // updatePlayerBForm() {
   //   this.playerForm = this.fb.group({
-  //     player_name: ['', [Validators.required]],
-  //     rank: ['', [Validators.required]],
-  //     score: ['', [Validators.required]],
-  //     time: ['', [Validators.required]],
-  //     gamesPlayed: ['', [Validators.required]],
-  //     status: ['', [Validators.required]]
+  //     player_name: [''],
+  //     rank: [''],
+  //     score: [''],
+  //     time: [''],
+  //     gamesPlayed: [''],
+  //     status: ['']
   //   })
   // }
 
